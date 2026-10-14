@@ -43,6 +43,7 @@ jobs:
   builds:
     needs: [setup-release-pages]
     strategy:
+      fail-fast: false
       matrix:
         gpl-build:
           - ${{ startsWith(github.ref, 'refs/tags/') || (github.event_name == 'schedule') }}
